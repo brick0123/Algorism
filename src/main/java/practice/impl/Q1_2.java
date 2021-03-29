@@ -3,6 +3,9 @@ package practice.impl;
 import java.util.Scanner;
 
 public class Q1_2 {
+  // 완전 탐색 유형.
+  // 데이터가 큰 경우에 정상동작하지 않을 수 있다.
+  // 전체 데이터의 개수가 100만개 이하일때 사용하면 적절
 
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
