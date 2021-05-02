@@ -1,29 +1,38 @@
 package baekjoon.bit;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Arrays;
 
 public class Test {
 
   public static void main(String[] args) throws IOException {
-    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    String[] size = br.readLine().split(" ");
 
-    int h = Integer.parseInt(size[0]);
-    int w = Integer.parseInt(size[1]);
+    int[][] arr = {
+        {1, 3},
+        {5, 3},
+        {2, 2},
+        {3, 1},
+        {4, 5}
+    };
 
-    int[][] graph = new int[h][w];
+//    Arrays.sort(arr, new Comparator<int[]>() {
+//      @Override
+//      public int compare(int[] o1, int[] o2) {
+//        if (o1[0] == o2[0]) {
+//          return Integer.compare(o1[1], o2[1]);
+//        } else {
+//          return Integer.compare(o1[0], o2[0]);
+//        }
+//      }
+//    });
 
-    // input -> graph
-    for (int i = 0; i < h; i++) {
-      String[] input = br.readLine().split(" ");
-      for (int j = 0; j < w; j++) {
-        graph[i][j] = Integer.parseInt(input[j]);
+    Arrays.sort(arr, (o1, o2) -> {
+      if (o1[0] == o2[0]) {
+        return Integer.compare(o1[1], o2[1]);
+      } else {
+        return Integer.compare(o1[0], o2[0]);
       }
-    }
+    });
 
-    System.out.println(Arrays.deepToString(graph));
   }
 }
