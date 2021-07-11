@@ -5,10 +5,27 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
+import java.util.Queue;
 import org.junit.jupiter.api.Test;
 
 
 public class PriorityQueueTest {
+
+  @Test
+  void map() {
+    Map<Integer, Integer> map = new HashMap<>();
+    map.put(1, 3);
+    map.put(2, 2);
+    map.put(3, 1);
+
+    Queue<Integer> heap = new PriorityQueue<>(
+        (e1, e2) -> map.get(e1) - map.get(e2));
+    heap.addAll(map.keySet());
+
+    while (!heap.isEmpty()) {
+      System .out.println(heap.poll());
+    }
+  }
 
   @Test
   void row_value() {

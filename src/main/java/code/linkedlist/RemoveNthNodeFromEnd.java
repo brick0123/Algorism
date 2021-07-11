@@ -28,6 +28,9 @@ public class RemoveNthNodeFromEnd {
 
 class ListNode {
 
+  public ListNode() {
+  }
+
   int val;
   ListNode next;
 
